@@ -438,6 +438,8 @@ class Proposal(BaseModel):
     thumbnail_url = db.Column(db.String)
     video_recording_lost = db.Column(db.Boolean, default=False)
 
+    tickets = db.relationship("EventTicket", backref="proposal")
+
     __mapper_args__ = {"polymorphic_on": type}
 
     @classmethod
