@@ -1,14 +1,14 @@
 """add EventTicket table
 
 Revision ID: cdd83c2c76b1
-Revises: 7a6816e652f2
+Revises: 4166f94375f5
 Create Date: 2024-04-21 22:02:49.807983
 
 """
 
 # revision identifiers, used by Alembic.
-revision = 'cdd83c2c76b1'
-down_revision = '7a6816e652f2'
+revision = "cdd83c2c76b1"
+down_revision = "4166f94375f5"
 
 from alembic import op
 import sqlalchemy as sa
