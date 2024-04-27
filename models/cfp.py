@@ -860,8 +860,13 @@ class WorkshopProposal(Proposal):
     published_age_range = db.Column(db.String)
     published_cost = db.Column(db.String)
     published_participant_equipment = db.Column(db.String)
-    requires_ticket = db.Column(db.Boolean, default=False, nullable=False)
-    non_lottery_tickts = db.Column(db.Integer, default=5, nullable=True)
+
+    requires_ticket = db.Column(db.Boolean, default=False, nullable=True)
+    total_tickets = db.Column(db.Integer, nullable=True)
+    non_lottery_tickets = db.Column(db.Integer, default=5, nullable=True)
+
+    def has_ticket_capacity(self):
+        return (self.total_tickets - len(self.tickets)) > 0
 
 
 class YouthWorkshopProposal(WorkshopProposal):
