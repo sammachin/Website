@@ -105,8 +105,6 @@
                                 {{ render_dl_field(form.cost) }}
                                 {{ render_dl_field(form.participant_equipment) }}
                                 {{ render_dl_field(form.age_range) }}
-                                {{ render_dl_field(form.tickets) }}
-                                {{ render_dl_field(form.non_lottery_tickets) }}
                                 {% if proposal.type == 'youthworkshop' %}
                                     {{ render_dl_field(form.valid_dbs) }}
                                 {% endif %}
@@ -137,6 +135,10 @@
                                 {{ render_dl_field(form.user_scheduled) }}
                                 {{ render_dl_field(form.hide_from_schedule) }}
                                 {{ render_dl_field(form.manually_scheduled) }}
+                                {% if proposal.type in ["workshop", "youthworkshop"] %}
+                                    {{ render_dl_field(form.tickets) }}
+                                    {{ render_dl_field(form.non_lottery_tickets) }}
+                                {% endif %}
                                 {{ render_dl_field(form.allowed_venues) }}
                                 {{ render_dl_field(form.allowed_times) }}
                                 {{ render_dl_field(form.scheduled_duration) }}
